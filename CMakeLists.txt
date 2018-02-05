@@ -42,6 +42,8 @@ set_target_properties(colib_shared PROPERTIES VERSION ${LIBCO_VERSION} SOVERSION
 macro(add_example_target EXAMPLE_TARGET)
     add_executable("example_${EXAMPLE_TARGET}" "example_${EXAMPLE_TARGET}.cpp")
     target_link_libraries("example_${EXAMPLE_TARGET}" colib_static)
+    target_link_libraries("example_${EXAMPLE_TARGET}" -lpthread)
+    target_link_libraries("example_${EXAMPLE_TARGET}" -ldl)
 endmacro(add_example_target)
 
 add_example_target(closure)
