@@ -1,0 +1,17 @@
+# Macro for add example target
+macro(add_example_target EXAMPLE_TARGET)
+    add_executable("example_${EXAMPLE_TARGET}" "example_${EXAMPLE_TARGET}.cpp")
+    target_link_libraries("example_${EXAMPLE_TARGET}" colib_static)
+    target_link_libraries("example_${EXAMPLE_TARGET}" -lpthread)
+    target_link_libraries("example_${EXAMPLE_TARGET}" -ldl)
+endmacro(add_example_target)
+
+add_example_target(closure)
+add_example_target(cond)
+add_example_target(copystack)
+add_example_target(echocli)
+add_example_target(echosvr)
+add_example_target(poll)
+add_example_target(setenv)
+add_example_target(specific)
+add_example_target(thread)
